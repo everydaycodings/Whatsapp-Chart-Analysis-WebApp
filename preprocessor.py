@@ -3,15 +3,15 @@ import pandas as pd
 
 def preprocess(data):
     pattern = '\d{1,2}/\d{1,2}/\d{2,4},\s\d{1,2}:\d{2}\s-\s'
+    pattern1 = "\d{1,2}/\d{1,2}/\d{2,4},\s\d{1,2}:\d{2}\s[AaPp][Mm]"
 
     messages = re.split(pattern, data)[1:]
-    dates = re.findall(pattern, data)
+    dates = re.findall(pattern1, data)
 
-    df = pd.DataFrame({'user_message': messages, 'message_date': dates})
+    df = pd.DataFrame({'user_message': messages, 'date': dates})
     # convert message_date type
-    df['message_date'] = pd.to_datetime(df['message_date'], format='%d/%m/%Y, %H:%M - ')
-
-    df.rename(columns={'message_date': 'date'}, inplace=True)
+    data["date"] = pd.to_datetime(data["date"], format="%d/%m/%Y, %I:%M %p")
+    data = data[["date", "user_message"]]
 
     users = []
     messages = []
@@ -24,18 +24,20 @@ def preprocess(data):
             users.append('group_notification')
             messages.append(entry[0])
 
-    df['user'] = users
-    df['message'] = messages
-    df.drop(columns=['user_message'], inplace=True)
+    data['user'] = users
+    data['message'] = messages
+    data.drop(columns=['user_message'], inplace=True)
 
-    df['only_date'] = df['date'].dt.date
-    df['year'] = df['date'].dt.year
-    df['month_num'] = df['date'].dt.month
-    df['month'] = df['date'].dt.month_name()
-    df['day'] = df['date'].dt.day
-    df['day_name'] = df['date'].dt.day_name()
-    df['hour'] = df['date'].dt.hour
-    df['minute'] = df['date'].dt.minute
-    return df
+    data['only_date'] = data['date'].dt.date
+    data['year'] = data['date'].dt.year
+    data['month'] = data['date'].dt.month_name()
+    data['day'] = data['date'].dt.day
+    data['day_name'] = data['date'].dt.day_name()
+    data['hour'] = data['date'].dt.hour
+    data = data.drop(columns="date")
+    data = data[["only_date", "year", "month", "day", "day_name", "hour", "user", "message"]]
+    data = data.rename(columns = {'only_date':'date'})
+
+    return data
 
 

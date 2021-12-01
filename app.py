@@ -18,10 +18,14 @@ if uploaded_file is not None:
     selected_user = st.sidebar.selectbox('Which user would you like to see Analysis',(user_list))
 
     if st.sidebar.button("Show Analysis"):
-        num_messages = helper.fetch_stats(selected_user, data)
+        num_messages, words = helper.fetch_stats(selected_user, data)
 
-        col1, clo2, col3, col4 = st.columns(4)
+        col1, col2, col3, col4 = st.columns(4)
 
         with col1:
-            st.header("Total Messages")
+            st.subheader("Total Messages for {}".format(selected_user))
             st.title(num_messages)
+        
+        with col2:
+            st.subheader("Total Words of Messages for {}".format(selected_user))
+            st.title(words)

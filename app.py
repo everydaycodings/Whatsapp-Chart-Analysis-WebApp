@@ -1,4 +1,5 @@
 import streamlit as st
+import preprocessor
 
 st.sidebar.title("Hello World")
 
@@ -7,4 +8,5 @@ if uploaded_file is not None:
     # To read file as bytes:
     bytes_data = uploaded_file.getvalue()
     data = bytes_data.decode("utf-8")
-    st.text(data)
+    data = preprocessor.preprocess(data)
+    st.dataframe(data)

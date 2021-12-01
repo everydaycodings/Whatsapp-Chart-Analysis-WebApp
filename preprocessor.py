@@ -2,20 +2,19 @@ import re
 import pandas as pd
 
 def preprocess(data):
-    pattern = '\d{1,2}/\d{1,2}/\d{2,4},\s\d{1,2}:\d{2}\s-\s'
+    pattern = "\d{1,2}/\d{1,2}/\d{2,4},\s\d{1,2}:\d{2}\s[AaPp][Mm]\s-\s"
     pattern1 = "\d{1,2}/\d{1,2}/\d{2,4},\s\d{1,2}:\d{2}\s[AaPp][Mm]"
 
     messages = re.split(pattern, data)[1:]
     dates = re.findall(pattern1, data)
-
-    df = pd.DataFrame({'user_message': messages, 'date': dates})
+    data = pd.DataFrame({'user_message': messages, 'date': dates})
     # convert message_date type
-    data["date"] = pd.to_datetime(data["date"], format="%d/%m/%Y, %I:%M %p")
+    data["date"] = pd.to_datetime(data["date"], format= "%d/%m/%Y, %I:%M %p")
     data = data[["date", "user_message"]]
 
     users = []
     messages = []
-    for message in df['user_message']:
+    for message in data['user_message']:
         entry = re.split('([\w\W]+?):\s', message)
         if entry[1:]:  # user name
             users.append(entry[1])

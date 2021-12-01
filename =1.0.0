@@ -1,0 +1,13 @@
+Collecting google-auth
+  Downloading google_auth-2.3.3-py2.py3-none-any.whl (155 kB)
+Requirement already satisfied: six>=1.9.0 in /home/ninja/.local/lib/python3.8/site-packages (from google-auth) (1.16.0)
+Collecting rsa<5,>=3.1.4
+  Downloading rsa-4.8-py3-none-any.whl (39 kB)
+Requirement already satisfied: setuptools>=40.3.0 in /home/ninja/anaconda3/envs/whatsapp_project/lib/python3.8/site-packages (from google-auth) (59.4.0)
+Collecting pyasn1-modules>=0.2.1
+  Downloading pyasn1_modules-0.2.8-py2.py3-none-any.whl (155 kB)
+Requirement already satisfied: cachetools<5.0,>=2.0.0 in /home/ninja/anaconda3/envs/whatsapp_project/lib/python3.8/site-packages (from google-auth) (4.2.4)
+Collecting pyasn1<0.5.0,>=0.4.6
+  Downloading pyasn1-0.4.8-py2.py3-none-any.whl (77 kB)
+Installing collected packages: pyasn1, rsa, pyasn1-modules, google-auth
+Successfully installed google-auth-2.3.3 pyasn1-0.4.8 pyasn1-modules-0.2.8 rsa-4.8

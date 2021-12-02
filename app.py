@@ -93,6 +93,6 @@ if uploaded_file is not None:
             plt.xticks(rotation=80)
             st.subheader("Most Comman Used by {}".format(selected_user))
             st.pyplot(fig)
-            #st.dataframe(most_common_data, width=290)
+
     except:
         st.markdown('## Error: Please Upload The WhatsApp Exported txt File not any other File.')

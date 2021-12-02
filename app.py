@@ -62,3 +62,11 @@ if uploaded_file is not None:
         fig, ax = plt.subplots()
         ax.imshow(wc_image)
         st.pyplot(fig)
+
+        most_common_data = helper.most_common_words(selected_user, data)
+        fig, ax = plt.subplots()
+        ax.barh(most_common_data[0], most_common_data[1])
+        plt.xticks(rotation=80)
+        st.subheader("Most Comman Used by {}".format(selected_user))
+        st.pyplot(fig)
+        #st.dataframe(most_common_data, width=290)

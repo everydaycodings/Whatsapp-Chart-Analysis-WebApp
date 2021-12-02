@@ -24,7 +24,7 @@ if uploaded_file is not None:
         col1, col2, col3, col4 = st.columns(4)
 
         with col1:
-            st.subheader("Total Messages by {}".format(selected_user))
+            st.subheader("Total Messages Contributed by {}".format(selected_user))
             st.title(num_messages)
         
         with col2:
@@ -41,14 +41,17 @@ if uploaded_file is not None:
         
         if selected_user == "Overall":
             
-            st.subheader("Top 5 Most Active Users")
+            st.subheader("Top 5 Most Active Users and Percentage contribution made by user")
 
-            x = helper.fetch_most_active_user(data)
+            x,percent_data = helper.fetch_most_active_user(data)
             fig, ax = plt.subplots()
 
             col1, col2 = st.columns(2)
 
             with col1:
-                ax.bar(x.index, x.values, color="green")
+                ax.bar(x.index, x.values, color="red")
                 plt.xticks(rotation=80)
                 st.pyplot(fig)
+            
+            with col2:
+                st.dataframe(percent_data)

@@ -1,4 +1,5 @@
 from urlextract import URLExtract
+from wordcloud import WordCloud
 
 extract = URLExtract()
 
@@ -29,3 +30,13 @@ def fetch_most_active_user(data):
     result = round((data["user"].value_counts()/data.shape[0])*100, 1).reset_index().rename({"index":"user", "user":"perentage"})
 
     return x, result
+
+
+def created_world_cloud(selected_data, data):
+    if selected_data != "Overall":
+        data = data[data["user"] == selected_data]
+    
+    wc = WordCloud(width=600, height=300, min_font_size=10, background_color="white")
+    df_wc = wc.generate(data["message"].str.cat(sep=" "))
+
+    return df_wc

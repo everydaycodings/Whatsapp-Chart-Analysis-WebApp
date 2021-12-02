@@ -4,10 +4,11 @@ def fetch_stats(selected_data, data):
         data = data[data["user"] == selected_data]
 
     num_messages = data.shape[0]
+    num_media_messages = data[data['message'] == '<Media omitted>\n'].shape[0]
     
     words = []
     for message in data["message"]:
         words.extend(message.split())
 
-    return num_messages, len(words)
+    return num_messages, len(words), num_media_messages
     

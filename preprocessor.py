@@ -2,15 +2,31 @@ import re
 import pandas as pd
 
 def preprocess(data):
-    pattern = "\d{1,2}/\d{1,2}/\d{2,4},\s\d{1,2}:\d{2}\s[AaPp][Mm]\s-\s"
-    pattern1 = "\d{1,2}/\d{1,2}/\d{2,4},\s\d{1,2}:\d{2}\s[AaPp][Mm]"
 
-    messages = re.split(pattern, data)[1:]
-    dates = re.findall(pattern1, data)
-    data = pd.DataFrame({'user_message': messages, 'date': dates})
-    # convert message_date type
-    data["date"] = pd.to_datetime(data["date"], format= "%d/%m/%Y, %I:%M %p")
-    data = data[["date", "user_message"]]
+    dissision_pattern = "\d{1,2}:\d{2}\s[AaPp][Mm]"
+    dission = len(re.findall(dissision_pattern, data))
+
+    if dission != 0:
+        pattern = "\d{1,2}/\d{1,2}/\d{2,4},\s\d{1,2}:\d{2}\s[AaPp][Mm]\s-\s"
+        pattern1 = "\d{1,2}/\d{1,2}/\d{2,4},\s\d{1,2}:\d{2}\s[AaPp][Mm]"
+        messages = re.split(pattern, data)[1:]
+        dates = re.findall(pattern1, data)
+
+        data = pd.DataFrame({"user_message": messages, "date": dates})
+        data["date"] = pd.to_datetime(data["date"], format="%d/%m/%Y, %I:%M %p")
+        data = data[["date", "user_message"]]
+    
+    else:
+        pattern = '\d{1,2}/\d{1,2}/\d{2,4},\s\d{1,2}:\d{2}\s-\s'
+
+        messages = re.split(pattern, data)[1:]
+        dates = re.findall(pattern, data)
+
+        data = pd.DataFrame({'user_message': messages, 'date': dates})
+        # convert message_date type
+        data['date'] = pd.to_datetime(data['date'], format='%d/%m/%Y, %H:%M - ')
+
+        data = data[["date", "user_message"]]
 
     users = []
     messages = []
@@ -27,6 +43,7 @@ def preprocess(data):
     data['message'] = messages
     data.drop(columns=['user_message'], inplace=True)
 
+
     data['only_date'] = data['date'].dt.date
     data['year'] = data['date'].dt.year
     data['month'] = data['date'].dt.month_name()
@@ -38,5 +55,3 @@ def preprocess(data):
     data = data.rename(columns = {'only_date':'date'})
 
     return data
-
-

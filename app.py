@@ -95,4 +95,4 @@ if uploaded_file is not None:
             st.pyplot(fig)
 
     except:
-        st.markdown('## Error: Please Upload The WhatsApp Exported txt File not any other File.')
+        st.error('Please Upload The WhatsApp Exported txt File not any other File.')

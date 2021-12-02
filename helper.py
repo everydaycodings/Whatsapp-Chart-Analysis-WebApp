@@ -19,4 +19,7 @@ def fetch_stats(selected_data, data):
         words.extend(message.split())
 
     return num_messages, len(words), num_media_messages, len(link)
-    
+
+def fetch_most_Active_user(data):
+    x = data["user"].value_counts().head()
+    return x

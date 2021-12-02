@@ -1,5 +1,6 @@
 import streamlit as st
 import preprocessor, helper
+import matplotlib.pyplot as plt
 
 st.sidebar.title("Hello World")
 
@@ -37,3 +38,17 @@ if uploaded_file is not None:
         with col4:
             st.subheader("Total Link Shared by {}".format(selected_user))
             st.title(link)
+        
+        if selected_user == "Overall":
+            
+            st.subheader("Top 5 Most Active Users")
+
+            x = helper.fetch_most_Active_user(data)
+            fig, ax = plt.subplots()
+
+            col1, col2 = st.columns(2)
+
+            with col1:
+                ax.bar(x.index, x.values, color="green")
+                plt.xticks(rotation=80)
+                st.pyplot(fig)

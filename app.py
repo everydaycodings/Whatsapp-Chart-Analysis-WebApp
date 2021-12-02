@@ -5,19 +5,19 @@ import pandas as pd
 
 st.sidebar.title("Hello World")
 
-sample_data = pd.read_csv("sample/sample.csv")
+f = open("sample/sample.txt", "r")
+sample_data = f.read()
 
 
 st.sidebar.download_button(
-        label="Download Sample CSV Data and Use It",
-        data=sample_data.to_csv(),
-        file_name='whatsapp_smaple_data.csv',
-        mime='text/csv',
-        help = "When You Click On Download Button You WhatsApp Text Data Will Be Converted To Clean CSV File"
+        label="Download Sample txt Data and Use It",
+        data=sample_data,
+        file_name='whatsapp_smaple_data.txt',
+        help = "Download WhatsApp exported txt sample data and use it to explore this web app."
     )
 
 
-uploaded_file = st.sidebar.file_uploader("Upload Your WhatsApp Group Exportd txt file",type="txt")
+uploaded_file = st.sidebar.file_uploader("Upload Your WhatsApp Group Exported (without Media) txt file",type="txt")
 
 if uploaded_file is not None:
     # To read file as bytes:
@@ -32,7 +32,7 @@ if uploaded_file is not None:
             data=data.to_csv(),
             file_name='whatsapp_data_output.csv',
             mime='text/csv',
-            help = "When You Click On Download Button Your WhatsApp Text Data Will Be Converted To Clean CSV File"
+            help = "When You Click On Download Button Your WhatsApp Text Data Will Be Converted To Clean Downloadable CSV File"
         )
 
         user_list = data["user"].unique().tolist()

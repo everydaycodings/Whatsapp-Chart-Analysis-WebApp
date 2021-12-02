@@ -32,7 +32,7 @@ def fetch_most_active_user(data):
     return x, result
 
 
-def created_world_cloud(selected_data, data):
+def created_word_cloud(selected_data, data):
     if selected_data != "Overall":
         data = data[data["user"] == selected_data]
     

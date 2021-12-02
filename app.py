@@ -57,7 +57,7 @@ if uploaded_file is not None:
                 st.dataframe(percent_data)
         
         st.subheader("Word Cloud for {}".format(selected_user))
-        wc_image = helper.created_world_cloud(selected_user, data)
+        wc_image = helper.created_word_cloud(selected_user, data)
 
         fig, ax = plt.subplots()
         ax.imshow(wc_image)

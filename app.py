@@ -5,7 +5,7 @@ import pandas as pd
 
 st.sidebar.title("Hello World")
 
-sample_data = pd.read_csv("data/sample.csv")
+sample_data = pd.read_csv("sample/sample.csv")
 
 
 st.sidebar.download_button(

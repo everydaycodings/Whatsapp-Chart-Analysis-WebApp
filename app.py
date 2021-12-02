@@ -43,7 +43,7 @@ if uploaded_file is not None:
             
             st.subheader("Top 5 Most Active Users")
 
-            x = helper.fetch_most_Active_user(data)
+            x = helper.fetch_most_active_user(data)
             fig, ax = plt.subplots()
 
             col1, col2 = st.columns(2)

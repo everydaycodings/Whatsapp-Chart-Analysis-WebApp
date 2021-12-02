@@ -6,7 +6,7 @@ def preprocess(data):
     dissision_pattern = "\d{1,2}:\d{2}\s[AaPp][Mm]"
     dission = len(re.findall(dissision_pattern, data))
 
-    if dission != 0:
+    if dission >= 3:
         pattern = "\d{1,2}/\d{1,2}/\d{2,4},\s\d{1,2}:\d{2}\s[AaPp][Mm]\s-\s"
         pattern1 = "\d{1,2}/\d{1,2}/\d{2,4},\s\d{1,2}:\d{2}\s[AaPp][Mm]"
         messages = re.split(pattern, data)[1:]

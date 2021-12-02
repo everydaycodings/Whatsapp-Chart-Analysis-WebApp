@@ -18,7 +18,7 @@ if uploaded_file is not None:
     selected_user = st.sidebar.selectbox('Which user would you like to see Analysis',(user_list))
 
     if st.sidebar.button("Show Analysis"):
-        num_media_messages, num_messages, words = helper.fetch_stats(selected_user, data)
+        num_messages, words, num_media_messages, link = helper.fetch_stats(selected_user, data)
 
         col1, col2, col3, col4 = st.columns(4)
 
@@ -33,3 +33,7 @@ if uploaded_file is not None:
         with col3:
             st.subheader("Total Media Shared by {}".format(selected_user))
             st.title(num_media_messages)
+        
+        with col4:
+            st.subheader("Total Link Shared by {}".format(selected_user))
+            st.title(link)

@@ -17,7 +17,7 @@
 - And many more coming in **Next version** like Sentimental Analysis and more...
 
 
-Check out the live demo: https://anime-recommendation-model.herokuapp.com
+Check out the live demo: https://best-whatsapp-chat-analysis.herokuapp.com/
 
 ### Vedio demo:
 <p><img  alt="GIF" src="https://github.com/everydaycodings/Whatsapp-Chart-Analysis-WebApp/blob/master/images/1.gif" width="800" height="450" /></p>

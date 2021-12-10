@@ -20,7 +20,7 @@
 Check out the live demo: https://anime-recommendation-model.herokuapp.com
 
 ### Vedio demo:
-<p><img  alt="GIF" src="https://github.com/everydaycodings/Anima-Recommendation-System-WebApp/blob/master/images/2.gif" width="800" height="450" /></p>
+<p><img  alt="GIF" src="https://github.com/everydaycodings/Whatsapp-Chart-Analysis-WebApp/blob/master/images/1.gif" width="800" height="450" /></p>
 
 # Note
 

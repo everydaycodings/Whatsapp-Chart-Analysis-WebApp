@@ -14,7 +14,7 @@
 - Word Cloud (Both Individually and collectively)
 - Most Common Used Words (Both Individually and collectively)
 - Top 5 Most Active Users and Percentage contribution made by the user
-- And many more coming in Next version like Sentimental Analysis and more...
+- And many more coming in **Next version** like Sentimental Analysis and more...
 
 
 Check out the live demo: https://anime-recommendation-model.herokuapp.com

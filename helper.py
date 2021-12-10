@@ -2,6 +2,20 @@ from urlextract import URLExtract
 from wordcloud import WordCloud
 import pandas as pd
 from collections import Counter
+import streamlit as st
+
+st.set_page_config(
+     page_title="WhatsApp Chart Analysis",
+     page_icon="🧊",
+     layout="wide",
+     initial_sidebar_state="expanded",
+     menu_items={
+         'Get Help': 'https://github.com/everydaycodings/Whatsapp-Chart-Analysis-WebApp#whatspp-chat-analyser',
+         'Report a bug': "https://github.com/everydaycodings/Whatsapp-Chart-Analysis-WebApp/issues/new",
+         'About': "# This is a header. This is an *extremely* cool app!"
+     }
+)
+
 
 extract = URLExtract()
 

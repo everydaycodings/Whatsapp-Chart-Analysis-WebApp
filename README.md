@@ -39,6 +39,6 @@ Source Code: [github link](https://github.com/everydaycodings/Whatsapp-Chart-Ana
 4. You will be automatically redirected the your localhost in brower where you can see you WebApp in live.
 
 ## How to get the WhatsApp Data?
-There is a visualisation of how to export Whatsapp data.
+This is a visualisation of how to export Whatsapp data.
 
 

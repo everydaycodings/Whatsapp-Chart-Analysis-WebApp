@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8-blueviolet)
 ![Framework](https://img.shields.io/badge/Framework-sreamlit-red)
-![API](https://img.shields.io/badge/API-myanimelist-fcba03)
+![Data](https://img.shields.io/badge/Dataset-WhatsApp-red)
 
 
 ## **WhatsApp Chat Analyser** uses your Whatsapp data and analysis it and extract insides form your caht histry.
@@ -24,11 +24,11 @@ Check out the live demo: https://anime-recommendation-model.herokuapp.com
 
 # Note
 
-> #### Use this URL - [Click Me](https://github.com/everydaycodings/Anima-Recommendation-System-WebApp/issues/new) - in case if you are faccing any problem with th WebApp or source code.
+> #### Use this URL - [Click Me](https://github.com/everydaycodings/Whatsapp-Chart-Analysis-WebApp/issues/new) - in case if you are faccing any problem with th WebApp or source code.
 
 
 
-Source Code: [github link](https://github.com/everydaycodings/Anima-Recommendation-System-WebApp)
+Source Code: [github link](https://github.com/everydaycodings/Whatsapp-Chart-Analysis-WebApp)
 
 
 ## How to run the project?

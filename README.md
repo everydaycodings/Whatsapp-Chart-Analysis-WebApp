@@ -19,7 +19,7 @@
 
 Check out the live demo: https://best-whatsapp-chat-analysis.herokuapp.com/
 
-### Vedio demo:
+### Video demo:
 <p><img  alt="GIF" src="https://github.com/everydaycodings/Whatsapp-Chart-Analysis-WebApp/blob/master/images/1.gif" width="800" height="450" /></p>
 
 # Note

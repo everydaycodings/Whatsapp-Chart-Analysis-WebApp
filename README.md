@@ -5,7 +5,7 @@
 ![Data](https://img.shields.io/badge/Dataset-WhatsApp-red)
 
 
-## **WhatsApp Chat Analyser** uses your Whatsapp data and analysis it and extracts insides from your cart history.
+## **WhatsApp Chat Analyser** uses your Whatsapp data and analysis it and extracts insides from your chat history.
 
 #### Features of this WebApp:
 - Supported for both 12-hrs format and 24-hrs format
